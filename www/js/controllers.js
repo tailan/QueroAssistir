@@ -5,15 +5,11 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('FilmesCtrl', function($scope, Chats) {
+.controller('FilmesCtrl', function($scope) {
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
 })
 
-.controller('FilmesDetalheCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('FilmesDetalheCtrl', function($scope, $stateParams) {
   
+
 });

@@ -1,15 +1,15 @@
 <ion-view view-title="Quero Assistir">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
+      <ion-item href="#/tab/filmes/1">
+        <h2>O Hobbit <span>(2012)</span></h2>
+        <ion-option-button class="button-positive">Já Assisti</ion-option-button>
+      </ion-item>
+      <ion-item>
+        <h2>Harry Potter <span> (2011)</span></h2>
+      </ion-item>      
+      <ion-item >
+        <h2 class="filmeVisto">Senhor dos Aneis  <span>(2001) </span></h2>
       </ion-item>
     </ion-list>
   </ion-content>
