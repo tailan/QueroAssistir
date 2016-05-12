@@ -4,59 +4,32 @@
 <div class="bar bar-header item-input-inset">
   <label class="item-input-wrapper">
     <i class="icon ion-ios-search placeholder-icon"></i>
-    <input type="search" placeholder="Procure títulos ou atores">
+    <input  type="text" 
+      placeholder="Procure por títulos"
+      ng-model="form.titulo">
   </label>
-  <button class="button button-outline button-positive">
+  <button class="button button-outline button-positive" ng-click="pesquisarFilmes()">
     Buscar
   </button>
 </div>
 
+<div ng-show="filmes.length === 0" >
+  <h4 ng-model="form.mensagem"></h4>
+</div>
 
-
-<div class="list card">
+<div class="list card" ng-repeat="filme in filmes">
   <div class="item item-body">
     <div class="row">
       <div class="col">
-        <img class="item-image" style="width: 100%;height: auto;" src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX125.jpg">
+        <img class="item-image" style="width: 100%;height: auto;" src="{{filme.Poster}}">
       </div>
       <div class="col">
-        <h2>O Hobbit (2012)</h2>
-        <h4>A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug.</h4>
+        <h2>{{filme.Title}} ({{filme.Year}})</h2>
         <button class="button button-small button-block button-positive">Quero Assistir</button>
       </div>      
     </div>
   </div>  
 </div>
-
-<div class="list card">
-  <div class="item item-body">
-    <div class="row">
-      <div class="col">
-        <img class="item-image" style="width: 100%;height: auto;" src="http://ia.media-imdb.com/images/M/MV5BMTY2MTk3MDQ1N15BMl5BanBnXkFtZTcwMzI4NzA2NQ@@._V1_SX125.jpg">
-      </div>
-      <div class="col">
-        <h2>Harry Potter (2011)</h2>
-        <h4>Harry, Ron and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.</h4>
-        <button class="button button-small button-block button-positive">Quero Assistir</button>
-      </div>      
-    </div>
-  </div>  
-</div>
-<div class="list card">
-  <div class="item item-body">
-    <div class="row">
-      <div class="col">
-        <img class="item-image" style="width: 100%;height: auto;" src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX125.jpg">
-      </div>
-      <div class="col">
-        <h2>O Hobbit (2012)</h2>
-        <h4>A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug.</h4>
-        <button class="button button-small button-block button-positive">Quero Assistir</button>
-      </div>      
-    </div>
-  </div>  
-</div>
-
  
 </div>
 </ion-content>
