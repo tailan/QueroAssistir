@@ -13,10 +13,6 @@
   </button>
 </div>
 
-<div ng-show="filmes.length === 0" >
-  <h4 ng-model="form.mensagem"></h4>
-</div>
-
 <div class="list card" ng-repeat="filme in filmes">
   <div class="item item-body">
     <div class="row">
@@ -25,7 +21,7 @@
       </div>
       <div class="col">
         <h2>{{filme.Title}} ({{filme.Year}})</h2>
-        <button class="button button-small button-block button-positive">Quero Assistir</button>
+        <button class="button button-small button-block button-positive" ng-disabled="jaAdicionado({{filme}})" ng-click="adicionar({{filme}})">Quero Assistir</button>
       </div>      
     </div>
   </div>  
