@@ -1,13 +1,32 @@
 
 <ion-view view-title="Detalhes">
-  <ion-content class="padding">
-    <div class="row">
-      <div class="col">
-        <img class="item-image" style="width: 100%;height: auto;" ng-src="{{filme.Poster}}" err-src="img/img-nao-disp.jpg">
-      </div>
-      <div class="col">
-        <h2>{{filme.Title}} ({{filme.Year}})</h2>
-      </div>      
-    </div>
-  </ion-content>
+<ion-content class="padding">
+<div class="row">
+	<div class="col">
+		<img class="item-image" style="width: 100%;height: auto;" ng-src="{{filme.Poster}}" err-src="img/img-nao-disp.jpg">
+	</div>
+	<div class="col">
+		<h4>{{filme.Title}} <span>({{filme.Year}})</span></h4>
+		<p><span class="ion-star energized"></span> {{filme.imdbRating}}</p>
+		<p><b>Duração</b> 	<span class="item-note">{{filme.Runtime}}</span></p>
+		<p><b>Diretor</b> 	<span class="item-note">{{filme.Director}}</span></p>
+		<p><b>Gêneros</b> 	<span class="item-note">{{filme.Genre}}</span></p>
+		
+		
+	</div>      	
+</div>
+<div class="row">
+	<b>Atores</b>
+</div>
+<div class="row">
+	<span class="item-note">{{filme.Actors}}</span>
+</div>
+<div class="row">
+	<b>Sinopse</b>
+</div>
+<div class="row">
+	<span class="item-note sinopse">{{filme.Plot}}</span>
+</div>
+
+</ion-content>
 </ion-view>

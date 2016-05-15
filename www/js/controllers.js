@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
     //Cria uma propriedade para controlar se o filme ja foi visto ou não
     filme.assistido = false;    
     LocalStorageFilmes.adicionarFilme(filme);
-    ionicToast.show('Filme adicionado com sucesso.', 'bottom', false, 2500);
+    ionicToast.show('Filme adicionado...', 'bottom', false, 2500);
   };
 
   $scope.jaAdicionado = function(filme){
@@ -62,7 +62,7 @@ angular.module('starter.controllers', [])
   $scope.remover = function(index)
   {
     $scope.filmes = LocalStorageFilmes.removerFilme(index);
-    ionicToast.show('Filme removido com sucesso.', 'bottom', false, 2500);
+    ionicToast.show('Filme removido...', 'bottom', false, 2500);
   }
 
 

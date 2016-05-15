@@ -5,28 +5,29 @@
   <label class="item-input-wrapper">
     <i class="icon ion-ios-search placeholder-icon"></i>
     <input  type="text" 
-      placeholder="Procure por títulos"
-      ng-model="form.titulo">
+    placeholder="Procure por títulos"
+    ng-model="form.titulo">
   </label>
   <button class="button button-outline button-positive" ng-click="pesquisarFilmes()">
     Buscar
   </button>
 </div>
-
 <div class="list card" ng-repeat="filme in filmes">
-  <div class="item item-body">
-    <div class="row">
-      <div class="col">
+  <ion-item class="item item-body" >
+  <div class="row">
+    <div class="col">
+      <a href="#/tab/pesquisar/{{filme.imdbID}}">
         <img class="item-image" style="width: 100%;height: auto;" ng-src="{{filme.Poster}}" err-src="img/img-nao-disp.jpg">
-      </div>
-      <div class="col">
-        <h2>{{filme.Title}} ({{filme.Year}})</h2>
-        <button class="button button-small button-block button-positive " ng-disabled="jaAdicionado({{filme}})" ng-click="adicionar({{filme}})">Quero Assistir</button>
-      </div>      
+      </a >
     </div>
-  </div>  
+    <div class="col">
+      <h2>{{filme.Title}} ({{filme.Year}})</h2>
+      <button class="button button-small button-block button-positive " ng-disabled="jaAdicionado({{filme}})" ng-click="adicionar({{filme}})">Quero Assistir</button>
+    </div>      
+  </div>
+</ion-item>  
 </div>
- 
+
 </div>
 </ion-content>
 </ion-view>
