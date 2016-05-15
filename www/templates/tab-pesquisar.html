@@ -17,11 +17,11 @@
   <div class="item item-body">
     <div class="row">
       <div class="col">
-        <img class="item-image" style="width: 100%;height: auto;" src="{{filme.Poster}}">
+        <img class="item-image" style="width: 100%;height: auto;" ng-src="{{filme.Poster}}" err-src="img/img-nao-disp.jpg">
       </div>
       <div class="col">
         <h2>{{filme.Title}} ({{filme.Year}})</h2>
-        <button class="button button-small button-block button-positive" ng-disabled="jaAdicionado({{filme}})" ng-click="adicionar({{filme}})">Quero Assistir</button>
+        <button class="button button-small button-block button-positive " ng-disabled="jaAdicionado({{filme}})" ng-click="adicionar({{filme}})">Quero Assistir</button>
       </div>      
     </div>
   </div>  

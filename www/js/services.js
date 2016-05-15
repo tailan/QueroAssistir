@@ -2,7 +2,6 @@ angular.module('starter.services', [])
 
 .factory('IMDBService', function($http) {
 
-
   return {
     searchById: function(imdbID) {
 
@@ -17,8 +16,6 @@ angular.module('starter.services', [])
 
           return result.data;
         });
-
-
     },
 
     searchByTitle: function(title, page) {
@@ -32,8 +29,8 @@ angular.module('starter.services', [])
 
         console.log(result);
 
-          return result.data;
-        });
+        return result.data;
+      });
     }
 
   };
@@ -64,12 +61,18 @@ angular.module('starter.services', [])
       filmes.push(filme);
       localStorage.setItem("quero-assistir-itens", angular.toJson(filmes));
     },
-    
+
+    removerFilme: function(index){
+      filmes.splice(index,1);
+      localStorage.setItem("quero-assistir-itens", angular.toJson(filmes));
+      return filmes;
+      
+    },
+
     verificarFilmeExistente: function(imdbID){
       return filmeExistente(imdbID);
     }
   };
-
 });
 
 

@@ -1,16 +1,12 @@
 <ion-view view-title="Quero Assistir">
   <ion-content>
-    <ion-list>
-      <ion-item href="#/tab/filmes/1">
-        <h2>O Hobbit <span>(2012)</span></h2>
-        <ion-option-button class="button-positive">Já Assisti</ion-option-button>
+    <ion-list >
+      <ion-item ng-repeat="filme in filmes" href="#/tab/filmes/{{filme.imdbID}}" >
+        <h2 ng-class="{ 'filmeVisto': {{filme.assistido}} }"> {{filme.Title}} <span>({{filme.Year}})</span></h2>
+        <ion-option-button ng-show="{{!filme.assistido}}"class="button-positive">Já Assisti</ion-option-button>
+        <ion-option-button ng-click="remover($index)" class="button-stable">Remover</ion-option-button>
       </ion-item>
-      <ion-item>
-        <h2>Harry Potter <span> (2011)</span></h2>
-      </ion-item>      
-      <ion-item >
-        <h2 class="filmeVisto">Senhor dos Aneis  <span>(2001) </span></h2>
-      </ion-item>
+      
     </ion-list>
   </ion-content>
 </ion-view>

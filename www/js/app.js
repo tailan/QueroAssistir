@@ -3,7 +3,6 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ionic-toast'])
 
 .run(function($ionicPlatform, $rootScope) {
-
 //Cria um objeto no scopo principal para conhecer a plataforma do app
   $rootScope.platform = {
     ios: ionic.Platform.isIOS(),
@@ -59,7 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','i
       }
     })
     .state('tab.filmes-detalhe', {
-      url: '/filmes/:filmeId',
+      url: '/filmes/:imdbID',
       views: {
         'tab-filmes': {
           templateUrl: 'templates/filme-detalhe.html',
@@ -71,4 +70,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','i
   //set initial view
   $urlRouterProvider.otherwise('/tab/pesquisar');
 
+})
+
+//Diretiva para quando der erro (404) no ng-src, carregar uma imagem default.
+.directive('errSrc', function() {
+  return {
+    link: function(scope, element, attrs) {
+      element.bind('error', function() {
+        if (attrs.src != attrs.errSrc) {
+          attrs.$set('src', attrs.errSrc);
+        }
+      });
+    }
+  }
 });
+;

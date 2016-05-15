@@ -1,9 +1,13 @@
 
 <ion-view view-title="Detalhes">
   <ion-content class="padding">
-    <img style="width: 64px; height: 64px">
-    <p>
-      OI
-    </p>
+    <div class="row">
+      <div class="col">
+        <img class="item-image" style="width: 100%;height: auto;" ng-src="{{filme.Poster}}" err-src="img/img-nao-disp.jpg">
+      </div>
+      <div class="col">
+        <h2>{{filme.Title}} ({{filme.Year}})</h2>
+      </div>      
+    </div>
   </ion-content>
 </ion-view>
