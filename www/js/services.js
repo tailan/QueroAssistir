@@ -71,7 +71,14 @@ angular.module('starter.services', [])
 
     verificarFilmeExistente: function(imdbID){
       return filmeExistente(imdbID);
+    },
+
+    assistirFilme: function(index){
+      filmes[index].assistido = true;
+      localStorage.setItem("quero-assistir-itens", angular.toJson(filmes));
+      return filmes;
     }
+
   };
 });
 

@@ -3,7 +3,7 @@
     <ion-list >
       <ion-item ng-repeat="filme in filmes" href="#/tab/filmes/{{filme.imdbID}}" >
         <h2 ng-class="{ 'filmeVisto': {{filme.assistido}} }"> {{filme.Title}} <span>({{filme.Year}})</span></h2>
-        <ion-option-button ng-show="{{!filme.assistido}}"class="button-positive">Já Assisti</ion-option-button>
+        <ion-option-button ng-click="assistir($index)" class="button-positive"  ng-show="{{!filme.assistido}}">Já Assisti</ion-option-button>
         <ion-option-button ng-click="remover($index)" class="button-stable">Remover</ion-option-button>
       </ion-item>
       

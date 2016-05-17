@@ -55,7 +55,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('FilmesCtrl', function($scope , LocalStorageFilmes, ionicToast) {
+.controller('FilmesCtrl', function($scope , $ionicLoading,LocalStorageFilmes, ionicToast) {
 
   $scope.filmes = LocalStorageFilmes.buscarFilmes();
 
@@ -63,6 +63,12 @@ angular.module('starter.controllers', [])
   {
     $scope.filmes = LocalStorageFilmes.removerFilme(index);
     ionicToast.show('Filme removido...', 'bottom', false, 2500);
+  }
+
+  $scope.assistir = function(index)
+  {
+    $ionicLoading.show({template: 'carregando...', duration : 1500});
+    $scope.filmes = LocalStorageFilmes.assistirFilme(index);    
   }
 
 
